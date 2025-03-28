@@ -10,14 +10,9 @@ import {
   SiTableau, SiOpencv, SiFastapi, SiHuggingface, SiStreamlit
 } from 'react-icons/si';
 import { FaDatabase, FaChartBar, FaCode } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Home() {
-  const SkillItem = ({ icon, label }: { icon: React.ReactNode; label: string }) => (
-    <div className="flex items-center gap-2 bg-blue-100 dark:bg-blue-900 px-3 py-2 rounded-full font-medium hover:scale-105 transition-transform text-black">
-      {icon}
-      <span>{label}</span>
-    </div>
-  );
 
   const projects = [
     {
@@ -103,18 +98,21 @@ export default function Home() {
       Shivam Joshi
     </h1>
     <p className="mt-4 text-xl text-gray-800 dark:text-gray-300 max-w-xl">
-      I'm a Data Scientist passionate about solving real-world problems through ML, NLP, and AI. I specialize in designing scalable data pipelines and deploying intelligent systems end-to-end.
+    I&apos;m a Data Scientist passionate about solving real-world problems through ML, NLP, and AI. I specialize in designing scalable data pipelines and deploying intelligent systems end-to-end.
     </p>
     <p className="mt-2 text-md text-gray-600 dark:text-gray-400 max-w-xl">
       Skilled in GCP, AWS, MLOps, and production-grade ML apps, always exploring the edge of tech with curiosity.
     </p>
   </div>
   <div className="flex-1 flex justify-center">
-    <img
-      src="/profile.jpeg"
-      alt="Shivam Joshi"
-      className="w-72 h-72 object-cover rounded-3xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl"
-    />
+  <Image
+  src="/profile.jpeg"
+  alt="Shivam Joshi"
+  width={288}
+  height={288}
+  className="w-72 h-72 object-cover rounded-3xl shadow-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+/>
+
   </div>
 </motion.section>
 
@@ -125,7 +123,7 @@ export default function Home() {
   whileInView={{ opacity: 1 }}
   transition={{ duration: 0.5 }}
   viewport={{ once: true }}
-  className="mt-10 md:mt-30 flex flex-col justify-center" 
+  className="mt-5 md:mt-10 flex flex-col justify-center" 
 >
   <h2 className="text-4xl font-bold mb-8 text-center text-black dark:text-white tracking-tight font-sans">About Me</h2>  
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -148,7 +146,7 @@ export default function Home() {
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.5 }}
   viewport={{ once: true }}
-  className="mt-10 md:mt-30 flex flex-col justify-center"  // Reduced from pt-28 to pt-16
+  className="mt-5 md:mt-10 flex flex-col justify-center"  // Reduced from pt-28 to pt-16
 >
   <h2 className="text-4xl font-bold mb-8 text-center text-black dark:text-white tracking-tight font-sans">Skills</h2>  
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -192,7 +190,7 @@ export default function Home() {
   whileInView={{ opacity: 1 }}
   transition={{ duration: 0.5 }}
   viewport={{ once: true }}
-  className="mt-10 md:mt-30"
+  className="mt-5 md:mt-10 flex flex-col justify-center"
 >
   <h2 className="text-4xl font-bold mb-10 text-center text-gray-900 dark:text-white tracking-tight">
     Experience & Education
@@ -228,11 +226,12 @@ export default function Home() {
     Projects
   </h2>
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-    {projects.map((project) => (
-      <div key={project.title} className="h-full">
-        <ProjectCard {...project} />
-      </div>
-    ))}
+  {projects.map((project, index) => (
+  <div key={index} className="h-full">
+    <ProjectCard {...project} />
+  </div>
+))}
+
   </div>
 </motion.section>
 
