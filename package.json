@@ -2,12 +2,12 @@
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
-"scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "deploy": "npm run build && npm run export && git add . && git commit -m 'Deploy' && git push origin main"
-},
-
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next build",
+    "deploy": "npm run build && npm run export && git add . && git commit -m 'Deploy' && git push origin main"
+  },
   "dependencies": {
     "framer-motion": "^12.6.2",
     "next": "15.2.4",
@@ -23,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
