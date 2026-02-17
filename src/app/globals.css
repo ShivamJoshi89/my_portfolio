@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --background: #25344F;
+  --foreground: #F5F2EA;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --surface-1: #2E3D5A;
+  --surface-2: #617891;
+  --surface-3: #1F2A44;
+
+  --accent-1: #D5B893;
+  --accent-2: #6F4D38;
+  --accent-3: #632024;
+
+  --text-1: #F5F2EA;
+  --text-2: rgba(245, 242, 234, 0.85);
+  --text-3: rgba(245, 242, 234, 0.70);
+
+  --border: rgba(245, 242, 234, 0.14);
+  --shadow: rgba(0, 0, 0, 0.25);
+
+  --card-primary: #D5B893;
+  --card-secondary: #6F4D38;
+  --card-accent: #632024;
+  --text-dark: #1F2A44;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1F2A44;
+    --surface-1: #25344F;
+    --surface-2: #4E6682;
+    --surface-3: #172033;
   }
+}
+
+/* Tailwind theme bridge */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+
+  --color-accent-1: var(--accent-1);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+
+  --color-text-1: var(--text-1);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+
+  --color-border: var(--border);
+  --color-shadow: var(--shadow);
+
+  --color-card-primary: var(--card-primary);
+  --color-card-secondary: var(--card-secondary);
+  --color-card-accent: var(--card-accent);
+  --color-text-dark: var(--text-dark);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-1);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Prevent sticky navbar from hiding headings when using anchor links */
+section {
+  scroll-margin-top: 110px;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
 }
