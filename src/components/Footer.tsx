@@ -8,12 +8,12 @@ export default function Footer() {
       <div className="mt-2 text-xs text-[var(--color-text-3)]">
         Designed &amp; Developed by{' '}
         <a
-          href="https://www.linkedin.com/in/manas-mandlecha/"
+          href="https://www.linkedin.com/in/shivamjoshi89/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--color-accent-1)] hover:text-[var(--color-accent-2)] underline underline-offset-4 transition-colors"
         >
-          Manas Mandlecha
+          Shivam Joshi
         </a>
       </div>
     </footer>
